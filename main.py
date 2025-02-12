@@ -1,11 +1,12 @@
-// [START all]
-const http = require('http');
-const handleRequest = function (req, res) {
-  res.writeHead(200);
-  res.end('Welcome to GKE module, by Siva!!');
-};
-const www = http.createServer(handleRequest);
-www.listen(parseInt(process.env.PORT) || 8080);
+from flask import Flask 
 
-// [END all]
-module.exports = www;
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+   return 'welcome to satyanini family '
+
+
+if __name__ == '__main__':
+   app.run(host='0.0.0.0', port=8080)
