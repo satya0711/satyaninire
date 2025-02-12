@@ -1,0 +1,11 @@
+// [START all]
+const http = require('http');
+const handleRequest = function (req, res) {
+  res.writeHead(200);
+  res.end('Welcome to GKE module, by Siva!!');
+};
+const www = http.createServer(handleRequest);
+www.listen(parseInt(process.env.PORT) || 8080);
+
+// [END all]
+module.exports = www;
